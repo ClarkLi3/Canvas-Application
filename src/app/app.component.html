@@ -5,7 +5,7 @@
   <pre>
     {{ user | json }}
   </pre>
-  <div  (change)="printhello()">
+  <div>
     <app-canvas [user]="user"></app-canvas>
   </div>
   
@@ -14,5 +14,6 @@
 </div>
 
 <ng-template #login> 
+  <h1>Hello, please login with your Google account.</h1>
   <button (click)= " loginWithGoogle() ">Login with Google</button>
 </ng-template>

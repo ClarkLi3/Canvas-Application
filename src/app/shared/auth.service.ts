@@ -22,7 +22,7 @@ export class AuthService {
     this.user$ = this.fireAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
-          return this.fireStore.doc<User>(`users/${user.uid}`).valueChanges();
+          return this.fireStore.doc(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -35,7 +35,6 @@ export class AuthService {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.fireAuth.signInWithPopup(provider);
     localStorage.setItem('user', JSON.stringify(credential.user));
-    console.log(credential.user.displayName);
     this.isLoggedIn=true;
     this.updateUserData(credential.user);
   }

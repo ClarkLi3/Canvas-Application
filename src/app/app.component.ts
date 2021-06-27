@@ -33,7 +33,4 @@ export class AppComponent implements OnInit {
     this.authService.logOut();
     this.isSignedIn = false;
   }
-  printhello(){
-    console.log("hello");
-  }
 }

@@ -11,10 +11,9 @@ import { CanvasDataService } from '../shared/canvas-data.service';
 export class CanvasComponent implements OnInit {
 
   canvas: any;
+  canvasdata: string;
+  @Input() user;
   
-  @Input() user: User;
-
-  title: "hello";
     
     
   constructor(public data:CanvasDataService) { }
@@ -23,15 +22,19 @@ export class CanvasComponent implements OnInit {
     this.canvas = new fabric.Canvas('canvas', {
       isDrawingMode:true
     });
+    this.data.getCanvasState(this.user).subscribe(val => {
+      this.canvas.loadFromJSON(val.data().canvasdata)
+    });
+    const canvasSaveState = () => {
+      this.data.updateCanvasData(this.user, JSON.stringify(this.canvas));
+    };
     
-    this.canvas.on('object:added', this.updateCanvasData(this.user, "hello"));
-    this.canvas.on('object:removed', this.updateCanvasData(this.user, "hello"));
-    this.canvas.on('object:modified', this.updateCanvasData(this.user, "hello"));
-    console.log(this.user.displayName);
+    this.canvas.on('object:added', canvasSaveState);
+    this.canvas.on('object:removed', canvasSaveState);
+    this.canvas.on('object:modified', canvasSaveState);
     
   }
-  updateCanvasData(user, canvasData){
-    this.data.updateCanvasData(user, canvasData);
-  };
+
+  
 
 }
