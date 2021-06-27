@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { 
   AngularFirestore,
   AngularFirestoreDocument,
-  AngularFirestoreCollection,
   DocumentSnapshot
 } from '@angular/fire/firestore';
-import firebase from 'firebase/app';
 import { User } from './User';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })

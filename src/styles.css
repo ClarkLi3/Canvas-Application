@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+.log {
+    margin:auto;
+    width: 50%;
+}
+.title {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.description {
+  text-align: center;
+  margin-top: 1rem 2rem;
+  margin: 40px;
+}
+.canvasinput {
+  margin: 10px;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+.canvas-container{
+    margin: 0 auto;
+}
+.centercanvas {
+    margin: 0;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.bottom{
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.log button{
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #b454a4;
+    background-color: #b454a4;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+  }
+  
+  .log button:hover,
+  .log button:active {
+    background-color: #510674;
+    border-color: #510674;
+  }
+  
+  .log button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  .log button.alternative:hover,
+  .log button.alternative:active {
+    background-color: #ddb3f8;
+  }

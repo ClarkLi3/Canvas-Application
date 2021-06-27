@@ -1,19 +1,23 @@
-
-
 <div *ngIf="authService.user$ | async as user; else login">
-  <h1>You're Signed in!</h1>
-  <pre>
-    {{ user | json }}
-  </pre>
-  <div>
-    <app-canvas [user]="user"></app-canvas>
+  <div class="title">
+    <h1 class="title">You're Signed in!</h1>
+    <h3 class="description">
+      You can draw with your cursor. Any changes are saved in realtime and
+      loaded when you come back.
+    </h3>
   </div>
-  
 
-  <button (click)="handleLogout()">Logout</button>
+  <app-canvas [user]="user"></app-canvas>
+  <div class="log bottom">
+    <button class="log center" (click)="handleLogout()">Logout</button>
+  </div>
 </div>
 
-<ng-template #login> 
-  <h1>Hello, please login with your Google account.</h1>
-  <button (click)= " loginWithGoogle() ">Login with Google</button>
+<ng-template #login>
+  <h1 class="title">Hello, please login with your Google account.</h1>
+  <div class="log center">
+    <button class="log center" (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+  </div>
 </ng-template>

@@ -1,5 +1,12 @@
-<canvas id="canvas" height="300"></canvas>
-<p>
-    Today's item: {{user.displayName}}
-  </p>
+<div class="centercanvas">
+  <canvas id="canvas" class="canvas" width="700" height="700"></canvas>
+  <div class="canvasinput">
+    <label for="brushcolor" class="canvasinput"> Select Color: </label>
+    <input type="color" value="#000000" id="brushcolor" class="canvasinput" [(ngModel)]="color" (change)=changebrush(color)>
+    <button (click)="clearCanvas()" class="canvasinput">Clear Canvas</button>
+  </div>
+  
+</div>
+
+
   <!-- <button (click) = "loadCanvasData(user,canvas)">Load Canvas</button> -->

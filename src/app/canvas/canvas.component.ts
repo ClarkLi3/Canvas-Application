@@ -12,6 +12,8 @@ export class CanvasComponent implements OnInit {
 
   canvas: any;
   canvasdata: string;
+  color = "#000000";
+  drawingMode = "draw";
   @Input() user;
   
     
@@ -34,6 +36,15 @@ export class CanvasComponent implements OnInit {
     this.canvas.on('object:modified', canvasSaveState);
     
   }
+  changebrush(color){
+    this.canvas.freeDrawingBrush.color = color;
+    console.log("hello")
+  }
+  clearCanvas(){
+    this.canvas.clear();
+  }
+
+  
 
   
 
